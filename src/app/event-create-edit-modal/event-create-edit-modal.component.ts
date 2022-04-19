@@ -10,6 +10,7 @@ export class EventCreateEditModalComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log('Changes 1');
   }
 
 }
