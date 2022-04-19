@@ -17,6 +17,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatListModule} from "@angular/material/list";
 import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
+import { EventCreateEditModalComponent } from './event-create-edit-modal/event-create-edit-modal.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import {MatIconModule} from "@angular/material/icon";
     ContentComponent,
     PostComponent,
     KthPipe,
-    AgeDirective
+    AgeDirective,
+    EventCreateEditModalComponent
   ],
     imports: [
         BrowserModule,
