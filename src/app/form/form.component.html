@@ -1,0 +1,16 @@
+<form (submit)="add($event)">
+  <label for="controlName">Name</label>
+  <input id="controlName"
+         type="text"
+         [value]="name"
+         #nameControlRef
+         required>
+  <label for="amountControl">Amount</label>
+  <input id="amountControl"
+         type="number"
+         [value]="amount"
+         #amountControlRef
+         required
+         min="0">
+  <button type="submit">Add</button>
+</form>
