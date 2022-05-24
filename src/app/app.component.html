@@ -1,49 +1,64 @@
-<!--<div class="container">-->
-<!--  <div class="card">-->
-<!--    <app-header-->
-<!--      [avatar]="data.avatarSrc"-->
-<!--      [birthDate]="data.birthDate"-->
-<!--    ></app-header>-->
-<!--    <app-content-->
-<!--      [firstName]="data.firstName"-->
-<!--      [lastName]="data.lastName"-->
-<!--    ></app-content>-->
-<!--    <div class="row">-->
-<!--      <app-post-->
-<!--        class="col"-->
-<!--        title="Posts"-->
-<!--        [value]="data.posts"-->
-<!--      ></app-post>-->
-<!--      <app-post-->
-<!--        class="col"-->
-<!--        title="Followers"-->
-<!--        [value]="data.followers"-->
-<!--      ></app-post>-->
-<!--      <app-post-->
-<!--        class="col"-->
-<!--        title="Following"-->
-<!--        [value]="data.following"-->
-<!--      ></app-post>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->
+<!--&lt;!&ndash;<div class="container">&ndash;&gt;-->
+<!--&lt;!&ndash;  <div class="card">&ndash;&gt;-->
+<!--&lt;!&ndash;    <app-header&ndash;&gt;-->
+<!--&lt;!&ndash;      [avatar]="data.avatarSrc"&ndash;&gt;-->
+<!--&lt;!&ndash;      [birthDate]="data.birthDate"&ndash;&gt;-->
+<!--&lt;!&ndash;    ></app-header>&ndash;&gt;-->
+<!--&lt;!&ndash;    <app-content&ndash;&gt;-->
+<!--&lt;!&ndash;      [firstName]="data.firstName"&ndash;&gt;-->
+<!--&lt;!&ndash;      [lastName]="data.lastName"&ndash;&gt;-->
+<!--&lt;!&ndash;    ></app-content>&ndash;&gt;-->
+<!--&lt;!&ndash;    <div class="row">&ndash;&gt;-->
+<!--&lt;!&ndash;      <app-post&ndash;&gt;-->
+<!--&lt;!&ndash;        class="col"&ndash;&gt;-->
+<!--&lt;!&ndash;        title="Posts"&ndash;&gt;-->
+<!--&lt;!&ndash;        [value]="data.posts"&ndash;&gt;-->
+<!--&lt;!&ndash;      ></app-post>&ndash;&gt;-->
+<!--&lt;!&ndash;      <app-post&ndash;&gt;-->
+<!--&lt;!&ndash;        class="col"&ndash;&gt;-->
+<!--&lt;!&ndash;        title="Followers"&ndash;&gt;-->
+<!--&lt;!&ndash;        [value]="data.followers"&ndash;&gt;-->
+<!--&lt;!&ndash;      ></app-post>&ndash;&gt;-->
+<!--&lt;!&ndash;      <app-post&ndash;&gt;-->
+<!--&lt;!&ndash;        class="col"&ndash;&gt;-->
+<!--&lt;!&ndash;        title="Following"&ndash;&gt;-->
+<!--&lt;!&ndash;        [value]="data.following"&ndash;&gt;-->
+<!--&lt;!&ndash;      ></app-post>&ndash;&gt;-->
+<!--&lt;!&ndash;    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;  </div>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
 
-<mat-list>
-  <app-item [id]="1" [delete]="delete(1)" (edit)="edit($event)"></app-item>
-  <app-item [id]="2" [delete]="delete(11)" (edit)="edit($event)"></app-item>
-  <app-item [id]="3" [delete]="delete" (edit)="edit($event)"></app-item>
-  <app-item [id]="4" [delete]="delete" (edit)="edit($event)"></app-item>
-</mat-list>
+<!--<mat-list>-->
+<!--  <ng-container class="mat-divider" *ngFor="let id of list">-->
+<!--    <ng-container *ngIf="id % 2 === 1; else skipEven">-->
+<!--      <app-item [id]="id" [delete]="delete" (edit)="edit($event)">-->
+<!--        <h2>Item <i>{{id}}</i></h2>-->
+<!--        <div>-->
+<!--          <h1>Hello</h1>-->
+<!--        </div>-->
+<!--        <p>akjhkjshkjashkfhkashkadfjhkfdhakhfjajka</p>-->
+<!--        <button mat-flat-button>Fun</button>-->
+<!--      </app-item>-->
+<!--    </ng-container>-->
+<!--  </ng-container>-->
+<!--</mat-list>-->
 
-<mat-list>
-  <ng-container *ngFor="let user of users;index as i">
-    <ng-container *ngTemplateOutlet="matListItem; context: { $implicit: user, i: i, key: 1 }"></ng-container>
-  </ng-container>
-</mat-list>
+<!--<ng-container *ngTemplateOutlet="skipEven; context: { $implicit: '!', y: 3, a: 2}"></ng-container>-->
 
-<ng-template #matListItem let-user let-i="i" let-x="key">
-  <mat-list-item>
-    {{user.firstName}} {{user.lastName}}
-  </mat-list-item>
-  <mat-divider *ngIf="i < users.length - 1"></mat-divider>
-</ng-template>
+<!--<ng-template #skipEven let-y let-x="a">-->
+<!--  Skip even numbers {{y}} {{x}}-->
+<!--</ng-template>-->
+
+<!--&lt;!&ndash;<mat-list>&ndash;&gt;-->
+<!--&lt;!&ndash;  <ng-container *ngFor="let user of users;index as i">&ndash;&gt;-->
+<!--&lt;!&ndash;    <ng-container *ngTemplateOutlet="matListItem; context: { $implicit: user, i: i, key: 1 }"></ng-container>&ndash;&gt;-->
+<!--&lt;!&ndash;  </ng-container>&ndash;&gt;-->
+<!--&lt;!&ndash;</mat-list>&ndash;&gt;-->
+
+<!--<ng-template #matListItem let-user let-i="i" let-x="key">-->
+<!--  <mat-list-item>-->
+<!--    {{user.firstName}} {{user.lastName}}-->
+<!--  </mat-list-item>-->
+<!--  <mat-divider *ngIf="i < users.length - 1"></mat-divider>-->
+<!--</ng-template>-->
+<app-students></app-students>

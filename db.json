@@ -1,0 +1,12 @@
+{
+  "students": [
+    {
+      "firstName": "Hegi",
+      "lastName": "Gjoka",
+      "email": "h@g.c",
+      "mobileNo": "0000000000",
+      "id": 1
+    }
+  ],
+  "topics": []
+}

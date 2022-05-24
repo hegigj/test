@@ -1,5 +1,6 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Inject, Input, OnInit, Output} from '@angular/core';
 import {Payload} from "../form/form.component";
+import {SIMPLE_DIALOG_DATA, SimpleDialogService} from "../simple-dialog.service";
 
 @Component({
   selector: 'app-item',
@@ -10,7 +11,6 @@ export class ItemComponent {
   @Input()
   id!: number;
 
-  name: string;
   amount: number;
 
   @Input('delete')
@@ -19,9 +19,10 @@ export class ItemComponent {
   @Output('edit')
   onEdit: EventEmitter<number>;
 
-  constructor() {
-    this.name = 'Item 1';
+  constructor(@Inject(SIMPLE_DIALOG_DATA) data: any) {
     this.amount = 5;
+
+    setTimeout(() => console.log(data), 1000);
 
     this.onEdit = new EventEmitter<number>();
   }

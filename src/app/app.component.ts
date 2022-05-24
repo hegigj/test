@@ -1,4 +1,6 @@
-import {AfterViewInit, Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {AfterViewInit, Component, Inject, OnInit, ViewEncapsulation} from '@angular/core';
+import {SimpleDialogService} from "./simple-dialog.service";
+import {ItemComponent} from "./item/item.component";
 
 interface Data {
   firstName: string;
@@ -12,7 +14,10 @@ interface Data {
 })
 export class AppComponent implements OnInit {
   users: Data[];
-  constructor() {
+
+  list: number[] = [1,2,3,4,5,6,7,8,9,10];
+
+  constructor(simpleService: SimpleDialogService) {
     this.users = [
       {
         firstName: 'Hegi',
@@ -27,6 +32,8 @@ export class AppComponent implements OnInit {
         lastName: 'Gjoka'
       }
     ];
+
+    simpleService.open(ItemComponent, { name: 'Hegi' })
   }
 
   ngOnInit(): void {}
@@ -35,8 +42,7 @@ export class AppComponent implements OnInit {
     console.log('Edit id:', id);
   }
 
-  delete(id: number): (arg: number) => void {
+  delete(id: number): void {
     console.log('Delete id:', id);
-    return (arg) => console.log('Delete id:', arg);
   }
 }

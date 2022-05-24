@@ -1,0 +1,25 @@
+<form #studentForm="ngForm" (ngSubmit)="save(studentForm?.form)">
+  <mat-form-field appearance="fill">
+    <mat-label>First Name</mat-label>
+    <input matInput ngModel name="firstName" required>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Last Name</mat-label>
+    <input matInput ngModel name="lastName" required>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Email</mat-label>
+    <input matInput ngModel name="email" required email>
+    <mat-error
+      *ngIf="studentForm?.form?.get('email')?.hasError('required')"
+    >This field is required</mat-error>
+    <mat-error
+      *ngIf="studentForm?.form?.get('email')?.hasError('email')"
+    >This field must be an email</mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Mobile Number</mat-label>
+    <input matInput ngModel name="mobileNo" required minlength="10" maxlength="13">
+  </mat-form-field>
+  <button mat-flat-button [disabled]="studentForm.invalid">Save</button>
+</form>

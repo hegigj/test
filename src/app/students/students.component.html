@@ -1,0 +1,21 @@
+<ng-container *ngIf="selectedId === undefined; else editStudent">
+  <button mat-fab (click)="selectedId = 0">
+    <mat-icon>add</mat-icon>
+  </button>
+  <div *ngFor="let student of students">
+    <app-card (onEdit)="edit(student.id)" (onDelete)="delete(student.id)">
+      <div class="title">{{student.firstName}} {{student.lastName}}</div>
+      <div class="content">
+        <p>Email: {{student.email}}</p>
+        <p>Mobile Number: {{student.mobileNo}}</p>
+      </div>
+    </app-card>
+  </div>
+</ng-container>
+
+<ng-template #editStudent>
+  <button mat-fab (click)="back()">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+  <app-student [id]="selectedId"></app-student>
+</ng-template>
